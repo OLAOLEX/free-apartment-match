@@ -3,41 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poll Embed</title>
+    <title>BeOp Poll Embed</title>
 </head>
 <body>
-
-    <!-- PollDaddy poll embed -->
-    <script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/14287687.js"></script>
-    <noscript><a href="https://poll.fm/14287687">Untitled Poll</a></noscript>
-
-    <script>
-    // Wait for the poll to load completely
-    window.addEventListener('load', function() {
-        // Check if the vote button is available periodically (poll is loaded asynchronously)
-        const pollCheckInterval = setInterval(function() {
-            // Target the vote button using its ID
-            const voteBtn = document.getElementById('pd-vote-button14287687');
-
-            if (voteBtn) {
-                // Clear the interval once the vote button is found
-                clearInterval(pollCheckInterval);
-
-                // Add an event listener to the vote button to simulate multiple clicks
-                voteBtn.addEventListener('click', function(event) {
-                    // Prevent default single vote action
-                    event.preventDefault();
-
-                    // Simulate multiple clicks
-                    const numberOfClicks = 5;  // Specify how many times you want to "click"
-                    for (let i = 0; i < numberOfClicks; i++) {
-                        voteBtn.click();  // Simulate the click
-                    }
+    
+    <div class="embed-infographic">
+        <div class="BeOpWidget" data-content="66e9c0ef9d032809d61516d3" data-name="embed-66e9c0ef9d032809d61516d3"></div>
+        <script>
+            window.beOpAsyncInit = function() {
+                BeOpSDK.init({
+                    account: "611eab0943cb6f529cc0d57b" // The BeOp account ID
                 });
-            }
-        }, 500); // Check every 500ms
-    });
-    </script>
-
+                BeOpSDK.watch();
+            };
+        </script>
+        <script src="https://widget.beop.io/sdk.js" async></script>
+    </div>
 </body>
 </html>
